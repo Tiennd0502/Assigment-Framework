@@ -1,0 +1,138 @@
+header {
+    /* position: relative; */
+}
+
+.shopping-mall {
+    /* padding-bottom: 20px; */
+    font-variant: small-caps;
+}
+
+.shopping-mall>h1 {
+    display: inline-block;
+    font-variant: small-caps;
+    font-family: Impact;
+    color: #ffffff;
+    letter-spacing: .3px;
+    text-shadow: 0 0 2px #000;
+    padding-bottom: 0;
+    border-bottom: 1px dotted gray;
+}
+
+.shopping-mall>h5 {
+    margin-top: 5px;
+    letter-spacing: .5px;
+}
+
+nav {}
+
+aside {}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.dropdown-menu.show {
+    margin-top: 8px;
+}
+
+.poly-cart ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-variant: small-caps;
+}
+
+#category .fw-bolder {
+    font-weight: 800;
+}
+
+.poly-prd {
+    padding: 5px;
+}
+
+.carousel-item img {
+    margin: 20px auto;
+    max-width: 60%;
+    height: 300px;
+}
+
+.carousel-caption {
+    text-shadow: 0 0 2px #000;
+}
+
+.carousel-control-next i,
+.carousel-control-prev i {
+    font-size: 3rem;
+    text-shadow: 0 0 2px #000;
+}
+
+.accordion .card-header {
+    cursor: pointer;
+}
+
+strong.accordion-title {
+    font-variant: small-caps;
+    font-size: 18px;
+}
+
+.img-thumbnail {
+    height: 50px;
+    max-width: 95%;
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.prd-img.img-thumbnail {
+    height: 50px;
+    max-width: 100%;
+}
+
+.accordion .link-secondary .badge {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.prd-desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {}
+
+
+/*  Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    .shopping-mall>h5 {
+        font-size: .8rem;
+        margin-top: 0;
+    }
+}
+
+
+/*  Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    .shopping-mall>h1 {
+        font-size: 3.2rem;
+    }
+    .shopping-mall>h5 {
+        font-size: 1.1rem;
+    }
+}
+
+
+/* X-Large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {}
+
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+
+@media (min-width: 1400px) {}
