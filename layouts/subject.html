@@ -1,0 +1,25 @@
+<h4>Trang môn học</h4>
+<div class="row">
+  <div class="col-lg-4 col-6 mt-3 mb-1 subject" ng-repeat="item in list_subject|startSubject:currentPage*pageSize | limitTo:pageSize" ng-click="">
+    <div class="card">
+      <div class="card-body">
+        <figure class="figure">
+          <img class="figure-img img-fluid" src="./images/logos/{{item.Logo}}" alt="">
+        </figure>
+      </div>
+      <div class="card-footer">
+        <h5 class="text-center">{{item.Name}}</h5>
+        <a href="#!/quiz/{{item.Id}}/{{item.Name}}/{{item.Logo}}" class=" mt-2 btn btn-primary">Làm quiz</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 mt-3">
+    <button class="btn btn-secondary" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+      Previous
+    </button>
+    <span class="p-2 m-2">{{currentPage+1}}/{{numberOfPages()}}</span>
+    <button class="btn btn-secondary" ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        Next
+    </button>
+  </div>
+</div>

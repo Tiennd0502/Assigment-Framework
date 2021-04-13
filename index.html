@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienndpd03947_Assignment_web207</title>
+  <link rel="stylesheet" type="text/css" href="./fonts/fontawesome-pro-5.14.0-web/css/all.css">
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body ng-app="myApp">
+  <div class="container-fluid" ng-controller="MasterCtrl">
+    <div class="container">
+      <header class="row">
+        <div class="col-lg-6 col-md-7 shopping-mall align-self-end mb-2 mt-2">
+          <h1>Online training</h1>
+          <h5>The center point of professional programming</h5>
+        </div>
+        <img class="col-lg-6 col-md-5" src="images/header-object.png" alt="img">
+      </header>
+
+      <!-- menu -->
+      <nav class="row navbar navbar-expand-lg navbar-dark bg-dark rounded" ng-include="'./layouts/_menu.html'">
+      </nav>
+
+      <div class="row border rounded mt-2 p-2">
+        <article class="col-lg-9 col-md-8">
+          <div ng-hide="loading" class="text-primary">Loading....</div>
+
+          <ng-view></ng-view>
+
+        </article>
+
+        <aside class="col-lg-3 col-md-4" ng-include="'./layouts/_aside.html'"></aside>
+
+      </div>
+      <footer class="row">
+        <div class="panel panel-default">
+          <div class="panel-heading text-center">
+            <p>FPT Polytechnic &copy; 207. All rights reserved</p>
+            <div></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <div class="container-fluid" ng-include="'./layouts/_modal.html'">
+
+    </div>
+  </div>
+
+
+  <script type="text/javascript" src="./js/jquery-3.5.0.min.js"></script>
+  <script type="text/javascript" src="./js/bootstrap.bundle.js"></script>
+  <script type="text/javascript" src="./js/angular.min.js"></script>
+  <script type="text/javascript" src="./js/angular-route.js"></script>
+  <script type="text/javascript" src="./js/layout.js"></script>
+  <script type="text/javascript" src="./js/javascript.js"></script>
+
+
+
+</body>
+
+</html>

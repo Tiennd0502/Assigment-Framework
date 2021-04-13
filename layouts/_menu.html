@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page" href="#!/index"><i class="fas fa-home-alt"></i> Trang chủ </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#!/introduce"><i class="fas fa-th-list"></i> Giới thiệu</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#!/contact"><i class="fas fa-phone-alt"></i> Liên hệ</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#!/feedback"><i class="fas fa-envelope"></i> Góp ý</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#!/answer"><i class="fas fa-question-circle"></i> Hỏi đáp</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav my-2 my-lg-0">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user"></i> Tài khoản</a>
+        <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
+          <div ng-show="login">
+            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#login">Đăng nhập</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#re-pass">Quên mật khẩu</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#regis">Đăng kí thành viên</a></li>
+          </div>
+          <div ng-hide="login">
+            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#logout">Đăng xuất</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#change-pass">Đổi mật khẩu</a></li>
+            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#update-profile">Cập nhật hồ sơ</a></li>
+          </div>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</div>
