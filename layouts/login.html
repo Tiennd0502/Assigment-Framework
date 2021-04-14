@@ -1,0 +1,20 @@
+<div class="card mt-2">
+  <div class="card-header">
+    <h5 class="card-title" id="loginLabel">Đăng nhập</h5>
+  </div>
+  <form class="card-body">
+    <div class="mb-3">
+      <label for="username" class="form-label">Tên tài khoản</label>
+      <input type="text" class="form-control" id="username" ng-model="username">
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Mật khẩu</label>
+      <input type="password" class="form-control" id="password" ng-model="password">
+    </div>
+    <div class="mb-3">
+      <label class="form-label text-danger" ng-show="error">Tài khoản hoặc mật khẩu không chính xác, xin thử lại!</label>
+    </div>
+    <button type="button" class="btn btn-primary" ng-click="checkLogin(username,password)">Đăng nhập</button>
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy bỏ</button>
+  </form>
+</div>

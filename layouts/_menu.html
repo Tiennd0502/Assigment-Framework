@@ -23,14 +23,14 @@
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user"></i> Tài khoản</a>
         <ul class="dropdown-menu shadow" aria-labelledby="navbarDropdown">
           <div ng-show="login">
-            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#login">Đăng nhập</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#re-pass">Quên mật khẩu</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#regis">Đăng kí thành viên</a></li>
+            <li><a class="dropdown-item" href="#!/login">Đăng nhập</a></li>
+            <li><a class="dropdown-item" href="#!/forgotPass">Quên mật khẩu</a></li>
+            <li><a class="dropdown-item" href="#!/regis">Đăng kí thành viên</a></li>
           </div>
           <div ng-hide="login">
-            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#logout">Đăng xuất</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#change-pass">Đổi mật khẩu</a></li>
-            <li><a class="dropdown-item" href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#update-profile">Cập nhật hồ sơ</a></li>
+            <li><a class="dropdown-item" href="#!/logout">Đăng xuất</a></li>
+            <li><a class="dropdown-item" href="#!/change_pass">Đổi mật khẩu</a></li>
+            <li><a class="dropdown-item" href="#!/profile">Cập nhật hồ sơ</a></li>
           </div>
         </ul>
       </li>
