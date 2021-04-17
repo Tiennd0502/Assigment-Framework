@@ -84,16 +84,15 @@ myApp.controller('LoginCtrl', function($scope, $rootScope, $http) {
   $scope.urlUser = 'http://localhost:3000/users';
   $scope.error = false;
 
-
   $scope.checkLogin = (username, password) => {
     let urlLogin = `${$scope.urlUser}?username=${username}&password=${password}`;
     $http.get(urlLogin).then((response) => {
       let user = response.data;
-      let check = response.data.length;
-      if (check) {
+      if (user.length) {
         localStorage.setItem('user', JSON.stringify(user[0]));
-        window.location.href = 'index.html#!/subject';
         $rootScope.login = false;
+        $scope.error = false;
+        window.location.href = 'index.html#!/subject';
       } else {
         localStorage.setItem('user', '');
         $rootScope.login = true;
@@ -107,8 +106,27 @@ myApp.controller('LoginCtrl', function($scope, $rootScope, $http) {
 
 // regis
 myApp.controller('RegisCtrl', function($scope, $rootScope, $http) {
-  //  
+  //
   $scope.urlUser = 'http://localhost:3000/users';
+  $scope.gender = true;
+  $scope.regis = (username, password, fullname, email, gender, birthday) => {
+    let data = {
+      username: username,
+      password: password,
+      fullname: fullname,
+      email: email,
+      gender: gender,
+      birthday: $("#birthday").val(),
+    };
+    $http.post($scope.urlUser, data).then((response) => {
+      // console.log(response);
+      alert("Đăng kí thành công");
+      window.location.href = "#!/login";
+    }, (error) => {
+      console.log(error);
+    })
+  }
+
 });
 // Forgot pass
 myApp.controller('ForgotPassCtrl', function($scope, $rootScope, $http) {
@@ -130,7 +148,7 @@ myApp.directive('quizfpoly', function($http, $interval, $quizFactory, $routePara
         return (time - (time %= 60)) / 60 + (9 < time ? ':' : ':0') + time;
       };
       scope.setTime = () => {
-        let minute = 15;
+        let minute = 10;
         let times = minute * 60;
         scope.timer = $interval(() => {
           times -= 1;
@@ -149,6 +167,8 @@ myApp.directive('quizfpoly', function($http, $interval, $quizFactory, $routePara
       scope.id = $routeParams.id;
       scope.logo = $routeParams.logo;
       scope.urlHistory = 'http://localhost:3000/histories';
+      scope.urlUser = 'http://localhost:3000/users';
+
       scope.start = () => {
         if (!localStorage.getItem('user') == '') {
           $quizFactory.LoadQuestions().then(() => {
@@ -156,8 +176,8 @@ myApp.directive('quizfpoly', function($http, $interval, $quizFactory, $routePara
             scope.strTime = '';
             scope.setTime();
             scope.time = true;
-            scope.showQuiz = true;
             scope.endQuiz = false;
+            scope.showQuiz = true;
             scope.questionNumber = 15;
             scope.marks = {};
             scope.mark = 0;
@@ -191,24 +211,22 @@ myApp.directive('quizfpoly', function($http, $interval, $quizFactory, $routePara
         }
         $interval.cancel(scope.timer);
         scope.totalScore = (scope.mark * 10 / scope.questionNumber).toFixed(2);
-        scope.saveQuiz();
       };
       // save quiz
       scope.saveQuiz = () => {
-          let user = JSON.parse(localStorage.getItem('user'));
-          let data = {
-            user_id: user.id,
-            subject: $routeParams.name,
-            marks: scope.totalScore,
-          };
-          $http.post(scope.urlHistory, data).then((response) => {
-            console.log(response.data);
-
-          }, (error) => {
-            console.log(error);
-          });
-        }
-        // reset quiz
+        let user = JSON.parse(localStorage.getItem('user'));
+        let data = {
+          user_id: user.id,
+          subject: $routeParams.name,
+          marks: scope.totalScore,
+        };
+        $http.post(scope.urlHistory, data).then((response) => {
+          console.log(response.data);
+        }, (error) => {
+          console.log(error);
+        });
+      };
+      // reset quiz
       scope.reset = () => {
         scope.showQuiz = false;
         scope.endQuiz = false;
@@ -227,7 +245,7 @@ myApp.directive('quizfpoly', function($http, $interval, $quizFactory, $routePara
 
       const appendHtml = (questionNumber) => {
         let questions = $quizFactory.getQuestions(questionNumber, );
-        console.log(questions);
+        // console.log(questions);
         let _indicator = '';
         let _inner = '';
         for (const key in questions) {

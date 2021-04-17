@@ -1,6 +1,5 @@
 {
-  "users": [
-    {
+  "users": [{
       "id": 1,
       "username": "teonv",
       "password": "iloveyou",
@@ -45,8 +44,7 @@
       "id": 4
     }
   ],
-  "histories": [
-    {
+  "histories": [{
       "user_id": 4,
       "subject": "SQL Server",
       "marks": "9.00",
@@ -60,9 +58,64 @@
     },
     {
       "user_id": 1,
-      "subject": "Lập trình Android cơ bản",
+      "subject": "Điện toán đám mây",
       "marks": "10.00",
       "id": 3
+    },
+    {
+      "user_id": 1,
+      "subject": "HTML5 và CSS3",
+      "marks": "10.00",
+      "id": 4
+    },
+    {
+      "user_id": 4,
+      "subject": "Lập trình PHP",
+      "marks": "10.00",
+      "id": 5
+    },
+    {
+      "user_id": 2,
+      "subject": "Quản lý dự án với Agile",
+      "marks": "10.00",
+      "id": 6
+    },
+    {
+      "user_id": 2,
+      "subject": "Điện toán đám mây",
+      "marks": "6.00",
+      "id": 7
+    },
+    {
+      "user_id": 3,
+      "subject": "Lập trình hướng đối tượng với Java",
+      "marks": "10.00",
+      "id": 8
+    },
+    {
+      "user_id": 3,
+      "subject": "HTML5 và CSS3",
+      "marks": "10.00",
+      "id": 9
+    },
+    {
+      "user_id": 3,
+      "subject": "Thiết kế layout",
+      "marks": "10.00",
+      "id": 10
+    },
+    {
+      "user_id": 3,
+      "subject": "Lập trình game 2D",
+      "marks": "10.00",
+      "id": 11
+    },
+    {
+      "user_id": 3,
+      "subject": "Lập trình game 2D",
+      "marks": "0.00",
+      "id": 12
     }
+
   ]
 }

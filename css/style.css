@@ -226,6 +226,12 @@ figure.title {
 
 .carousel-item span.badge {}
 
+.error {
+  color: red;
+  margin-top: 2px;
+  margin-left: 5px;
+}
+
 
 /* Small devices (landscape phones, 576px and up) */
 

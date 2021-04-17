@@ -1,44 +1,57 @@
 <!-- Modal  regis-->
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="regisLabel">Đăng kí</h5>
-      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <form class="modal-body">
-      <div class="mb-3">
-        <label for="username" class="form-label">Tên tài khoản</label>
-        <input type="text" class="form-control" id="username" placeholder="Tên tài khoản">
-      </div>
-      <div class="mb-3">
-        <label for="password" class="form-label">Mật khẩu</label>
-        <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
-      </div>
-      <div class="mb-3">
-        <label for="fullname" class="form-label">Tên đầy đủ</label>
-        <input type="text" class="form-control" id="fullname" placeholder="Tên đầy đủ...">
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="abcd@gmail.com">
-      </div>
-      <div class="mb-3">
-        <label for="email" class="form-label">Giới tính</label>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="true" checked>
-          <label class="form-check-label" for="inlineRadio1">Nam</label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="false">
-          <label class="form-check-label" for="inlineRadio2">Nữ</label>
-        </div>
-      </div>
-      <div class="mb-3">
-        <label for="birthday" class="form-label">Ngày sinh</label>
-        <input type="date" class="form-control" id="birthday">
-      </div>
-      <button type="button" class="btn btn-primary">Đăng kí</button>
-      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy bỏ</button>
-    </form>
+<div class="card mt-2">
+  <div class="card-header">
+    <h5 class="" id="Label">Đăng kí thành viên</h5>
   </div>
+  <!-- <div class="mt-2 mt-2" ng-show="checkRegis">
+    <h5 class="text-center">Đăng kí thành công!</h5>
+    <div class="text-center">
+      <a href="#!/login" class="btn btn-primary d-block m-auto" style="width:fit-content">Đăng nhập</a>
+      <a href="#" class="d-block mt-2">Quay lại trang chủ</a>
+    </div>
+  </div> -->
+  <form class="card-body g-3 needs-validation" name="regisForm" action="#">
+    <div class="form-row">
+      <div class="mb-3 ">
+        <label for="username">Tên tài khoản</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Tên tài khoản" ng-model="username" required>
+        <div class="error" ng-show="regisForm.username.$touched && regisForm.username.$invalid">Vui lòng nhập tên đăng nhập!</div>
+      </div>
+      <div class="mb-3 ">
+        <label for="password">Mật khẩu</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Mật khẩu" ng-model="password" required>
+        <div class="error" ng-show="regisForm.password.$touched && regisForm.password.$invalid">Vui lòng nhập mật khẩu đăng nhập!</div>
+      </div>
+      <div class="mb-3 ">
+        <label for="fullname">Tên đầy đủ</label>
+        <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Tên đầy đủ..." ng-model="fullname" required>
+        <div class="error" ng-show="regisForm.fullname.$touched && regisForm.fullname.$invalid">Vui lòng nhập tên đầy đủ!</div>
+      </div>
+      <div class="mb-3 ">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="abcd@gmail.com" ng-model="email" required>
+        <div class="error" ng-show="regisForm.email.$touched && regisForm.email.$invalid">
+          <span ng-show="regisForm.email.$error.required">Vui lòng nhập email!</span>
+          <span ng-show="regisForm.email.$error.email">Vui lòng nhập đúng định dạng email!</span>
+        </div>
+      </div>
+      <div class="mb-3 ">
+        <label for="email">Giới tính</label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" id="male" ng-value="true" ng-model="gender">
+          <label class="form-check-label" for="male">Nam</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" id="felmale" value="false" ng-model="gender">
+          <label class="form-check-label" for="felmale">Nữ</label>
+        </div>
+      </div>
+      <div class="mb-3 ">
+        <label for="birthday">Ngày sinh</label>
+        <input type="date" class="form-control" name="birthday" id="birthday" ng-model="birthday" required>
+        <div class="error" ng-show="regisForm.birthday.$touched && regisForm.birthday.$invalid">Vui lòng nhập ngày sinh!</div>
+      </div>
+    </div>
+    <button type="button" class="btn btn-primary" ng-click="regis(username, password, fullname, email, gender, birthday)" ng-disabled="regisForm.username.$invalid || regisForm.password.$invalid || regisForm.fullname.$invalid || regisForm.birthday.$invalid || regisForm.email.$invalid">Đăng kí</button>
+  </form>
 </div>
