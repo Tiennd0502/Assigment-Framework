@@ -1,5 +1,6 @@
 ĐẶT VẤN ĐỀ:  
-Xây dựng website thi trắc nghiệm trực tuyến triển khai theo hình thức SPA sử dụng công nghệ 
+Xây dựng website thi trắc nghiệm trực tuyến triển khai theo hình thức SPA sử dụng công nghệ
+
 Bootstrap và AngularJS với các chức năng theo yêu cầu sau 
   Người học vào trang danh mục môn học và chọn môn thi. Trang thi trắc nghiệm hiển thị 
 phục vụ người học thi trắc nghiệm môn đã chọn. 
