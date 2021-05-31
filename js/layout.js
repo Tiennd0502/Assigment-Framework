@@ -148,7 +148,7 @@ myApp.directive('quizfpoly', function($http, $interval, $quizFactory, $routePara
         return (time - (time %= 60)) / 60 + (9 < time ? ':' : ':0') + time;
       };
       scope.setTime = () => {
-        let minute = 10;
+        let minute = 1;
         let times = minute * 60;
         scope.timer = $interval(() => {
           times -= 1;
@@ -157,6 +157,7 @@ myApp.directive('quizfpoly', function($http, $interval, $quizFactory, $routePara
 
           if (times == 0) {
             $interval.cancel(scope.timer);
+            scope.endTest();
             scope.time = false;
             scope.endQuiz = true;
             scope.showQuiz = false;
